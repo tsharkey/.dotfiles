@@ -2,37 +2,31 @@
 A collection of dotfiles and configurations to make my development environment "portable"
 
 # Install
+Maybe just have the install script open these pages
+- vscode
+- bear notes
+- iterm nord theme
 
-## Brew
-- autojump
-- terraform
-- go
-- oh-my-posh
-  - `brew install jandedobbeleer/oh-my-posh/oh-my-posh`
-  - `eval "$(oh-my-posh init zsh --config ~/dev/.dotfiles/posh-theme.omp.json)"`
-- gh
-- lastpass cli
+# TODO: Unanswered questions
+- how to sync vs code properly
+- how to sync alfred properly
+- how to sync iterm properly
+- setup gitconfig and global gitignore
+- setup linking for all of the tooling config files
 
-# Fonts
+# What scripts do I want to add here?
 
-## Hack Nerd Font Mono
-Font for ohmyposh theme to get icons working properly
-https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
+# TODO:
+install script
+add scripts folder to path
+get command for installing iterm2 nord theme
+consider getting dropbox, it might make it easier to sync everything from there
 
-### TODO
-- iterm nord theme installation
-- what is my toolchain
-  - dbeaver
-  - vscode
-  - iterm
-  - todoist
-  - bear notes
-  - spotify
-  - slack
-  - chrome? Sidekick?
-  - alfred
-  - lastpass
-  - fig
-  - grammarly
-  - zsh
-  - git
+# Order of Operations
+- run brew install script
+  - probably should make sure that I also have brew installed already and that it is up to date
+- run mas install script
+- setup mac os defaults
+- symlink all the dotfile
+
+

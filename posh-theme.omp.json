@@ -120,6 +120,6 @@
         }
     ],
     "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏚\" }} @ {{.HostName}}",
-    "osc99": true,
+    "osc99": false,
     "version": 2
 }

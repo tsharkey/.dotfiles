@@ -1,1 +1,4 @@
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
 alias fixdbeaver='codesign --force --deep --sign - /Applications/DBeaverEE.app'
+alias ohmyzsh="code ~/.oh-my-zsh"
+alias reloadzsh="source ~/.zshrc"
