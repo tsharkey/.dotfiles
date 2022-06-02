@@ -4,4 +4,4 @@
 # mas is a utility to install macOS apps from the App Store via the command line
 
 # Bear Notes
-
+mas install 1091189122

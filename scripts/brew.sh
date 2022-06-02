@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#check if brew is installed
+# check if brew is installed
 if ! [ -x "$(command -v brew)" ]; then
   echo "Installing brew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -9,7 +9,7 @@ else
     brew update
 fi
 
-# install nerd font
+# install nerd font, a nerd font is required for oh-my-posh to work
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 

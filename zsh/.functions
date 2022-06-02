@@ -32,3 +32,12 @@ gitp() {
 mdir() {
     mkdir -p "$@" && cd "$@" || exit
 }
+
+# search lastpass for a password
+lps() {
+    select pass in $(lpass show --basic-regexp "$1")
+    do
+        lpass show --password "$pass"
+        break
+    done
+}
