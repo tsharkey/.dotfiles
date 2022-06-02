@@ -21,7 +21,7 @@ source ~/dev/.dotfiles/zsh/.functions
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump aws docker docker-compose gh history jira lpass thefuck vscode alias-tips)
+plugins=(git autojump aws docker docker-compose gh history jira lpass thefuck vscode alias-tips ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 

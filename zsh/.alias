@@ -10,5 +10,9 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 # utility
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
 
+# vscode projects
+alias df="code ~/dev/.dotfiles"
+
 # misc
 alias fixdbeaver='codesign --force --deep --sign - /Applications/DBeaverEE.app'
+
