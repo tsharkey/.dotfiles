@@ -1,0 +1,20 @@
+# git
+# push upstream to current branch name, if on master ask if that's ok
+gitp() {
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    if [ "$branch" = "master" ]; then
+        echo "Are you sure you want to push to master? (y/n)"
+        read -r answer
+        if [ "$answer" = "n" ]; then
+            return
+        fi
+    fi
+
+    # check if branch has upstream
+    if ! git rev-parse --verify --quiet @{upstream} > /dev/null; then
+        echo "Creating upstream branch"
+        git push -u origin "${branch}"
+        return
+    fi
+  git push origin "$(git rev-parse --abbrev-ref HEAD)"
+}

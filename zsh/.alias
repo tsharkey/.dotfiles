@@ -1,4 +1,13 @@
-alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
-alias fixdbeaver='codesign --force --deep --sign - /Applications/DBeaverEE.app'
+# git
+alias ga='git add .'
+alias gcm='git commit -m'
+
+# zsh
+alias rld="source ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-alias reloadzsh="source ~/.zshrc"
+
+# utility
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
+
+# misc
+alias fixdbeaver='codesign --force --deep --sign - /Applications/DBeaverEE.app'

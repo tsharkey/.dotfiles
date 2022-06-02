@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # create symlinks for zsh stuff
-
+ln -sf ~/dev/.dotfiles/zsh/.zshrc ~/.zshrc
 # reload zsh
 
 # run install script

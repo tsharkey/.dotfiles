@@ -47,5 +47,11 @@ brew install --cask alfred
 brew install --cask docker 
 brew install --cask grammarly-desktop 
 brew install --cask dbeaver-enterprise
+brew install --cask visual-studio-code
+brew install --cask postman
+brew install --cask tiles
+brew install --cask fantastical
+brew install --cask zoomus
+brew install --cask appcleaner
 
 brew cleanup

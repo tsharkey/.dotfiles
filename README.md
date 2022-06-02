@@ -13,6 +13,7 @@ Maybe just have the install script open these pages
 - how to sync iterm properly
 - setup gitconfig and global gitignore
 - setup linking for all of the tooling config files
+- alias list helper, when you run a command it can prompt saying you have an alias for that
 
 # What scripts do I want to add here?
 
@@ -28,5 +29,7 @@ consider getting dropbox, it might make it easier to sync everything from there
 - run mas install script
 - setup mac os defaults
 - symlink all the dotfile
+
+
 
 
