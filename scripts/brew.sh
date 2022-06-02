@@ -1,8 +1,13 @@
 #!/bin/bash
 
-brew update
-
-brew upgrade
+#check if brew is installed
+if ! [ -x "$(command -v brew)" ]; then
+  echo "Installing brew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo "brew already installed... updating and upgrading"
+    brew update
+fi
 
 # install nerd font
 brew tap homebrew/cask-fonts
@@ -30,15 +35,17 @@ brew install mas \ # Mac App Store
              gh \ # github cli
              tree \ # directory tree view
              zsh-completions \
-             autojump \ # fast directory switching
-             # applications
-             iterm2 \
-             google-chrome \
-             slack \
-             spotify \
-             alfred \
-             docker \
-             grammarly-desktop \
-             dbeaver-enterprise
+             autojump # fast directory switching
+             
+# Install apps separately because if they are already installed
+# they will stop the install chain
+brew install --cask iterm2
+brew install --cask google-chrome 
+brew install --cask slack 
+brew install --cask spotify 
+brew install --cask alfred 
+brew install --cask docker 
+brew install --cask grammarly-desktop 
+brew install --cask dbeaver-enterprise
 
 brew cleanup
