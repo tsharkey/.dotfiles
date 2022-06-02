@@ -18,3 +18,7 @@ gitp() {
     fi
   git push origin "$(git rev-parse --abbrev-ref HEAD)"
 }
+
+mdir() {
+    mkdir -p "$@" && cd "$@" || exit
+}
