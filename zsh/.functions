@@ -1,6 +1,16 @@
 # git
 # push upstream to current branch name, if on master ask if that's ok
 gitp() {
+    # requires git zsh plugin
+    gaa
+
+    # read the commit message from user
+    echo -n "Enter commit message: " 
+    read -r commit_message
+
+    gcam "${commit_message}"
+
+    # if on master branch
     branch=$(git rev-parse --abbrev-ref HEAD)
     if [ "$branch" = "master" ]; then
         echo "Are you sure you want to push to master? (y/n)"
