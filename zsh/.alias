@@ -1,6 +1,7 @@
 # git
 alias ga='git add .'
 alias gcm='git commit -m'
+alias ghb="gh browse"
 
 # zsh
 alias rld="source ~/.zshrc"
