@@ -1,11 +1,34 @@
 #!/bin/bash
 
-# create symlinks for zsh stuff
-ln -sf ~/dev/.dotfiles/zsh/.zshrc ~/.zshrc
-# reload zsh
+# load .env for config
+set -ae
+source .env
 
-# run install script
+echo "Are you sure you want to run the initial setup? (y/n)"
+  read -r response
+  if ! [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    echo "Exiting..."
+    exit 1
+fi
 
-# run brew script
+pushd install-scripts > /dev/null || echo "pushd install-scripts failed... this should not happen..." && exit 1
 
-# add scripts folder to path or maybe this can just be in the zshrc?
+sh ./backup.sh
+
+sh ./requirements.sh
+
+sh ./brew-install.sh
+
+sh ./mas-install.sh
+
+sh ./link.sh
+
+sh ./macos-defaults.sh
+
+sh ./dotfiles.sh
+
+source ~/.zshrc
+
+
+
+echo "Setup complete!"

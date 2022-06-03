@@ -1,34 +1,52 @@
 # README.md
 A collection of dotfiles and configurations to make my development environment "portable"
 
-# Install
-Maybe just have the install script open these pages
-- vscode
-- bear notes
-- iterm nord theme
+## Requirements
+- xcode command line tools
+- macOS 11.4 or greater (Big Sur)
+- zsh
+- oh-my-zsh
 
-# TODO: Unanswered questions
-- how to sync vs code properly
-- how to sync alfred properly
-- how to sync iterm properly
-- setup gitconfig and global gitignore
-- setup linking for all of the tooling config files
-- alias list helper, when you run a command it can prompt saying you have an alias for that
+If any of these requirements are missing you will be prompted to install them through [requirements.sh](install-scripts/requirements.sh)
 
-# What scripts do I want to add here?
+## What's getting installed?
+- brew (if not already installed)
+- A handful of casks and formulas
+  - see [brew.sh](install-scripts/brew.sh) for the list of formulas and casks
+- brew installs mas, a utility to install Mac App Store apps from the command line
+  - see [mas-install.sh](install-scripts/mas-install.sh) for the list of apps installed
+- xcode command line tools
 
-# TODO:
-install script
-add scripts folder to path
-get command for installing iterm2 nord theme
-consider getting dropbox, it might make it easier to sync everything from there
 
-# Order of Operations
-- run brew install script
-  - probably should make sure that I also have brew installed already and that it is up to date
-- run mas install script
-- setup mac os defaults
-- symlink all the dotfile
+## Usage
+Clone this repository
+```
+git clone git@github.com/tsharkey/.dotfiles.git
+```
+
+Run [init.sh](init.sh)
+```
+cd <path do this project directory>
+
+sh init.sh
+```
+
+
+# TODO
+- vscode syncing (this should just be done through settings sync once logged in)
+- alfred syncing
+- iterm syncing
+  - iterm theme installation? or will this just get synced?
+- gitconfig
+  - global ignore
+- symlinking script
+- figure out all macos settings that I have changed
+- backup script
+- complete zshrc
+- dotfiles.sh 
+
+# Thoughts:
+- consider getting dropbox, it might make it easier to sync everything from there
 
 
 

@@ -1,6 +1,4 @@
 # git
-alias ga='git add .'
-alias gcm='git commit -m'
 alias ghb="gh browse"
 
 # zsh
@@ -12,6 +10,8 @@ alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
 
 # vscode projects
 alias df="code ~/dev/.dotfiles"
+alias fw="code ~/dev/sportsdeck/web-app"
+alias fa="code ~/dev/sportsdeck/api"
 
 # misc
 alias fixdbeaver='codesign --force --deep --sign - /Applications/DBeaverEE.app'
