@@ -2,13 +2,13 @@
 # push upstream to current branch name, if on master ask if that's ok
 gitp() {
     # requires git zsh plugin
-    gaa
+    git add -A
 
     # read the commit message from user
     echo -n "Enter commit message: " 
     read -r commit_message
 
-    gcam "${commit_message}"
+    git commit -m "${commit_message}"
 
     # if on master branch
     branch=$(git rev-parse --abbrev-ref HEAD)
