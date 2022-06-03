@@ -119,7 +119,7 @@
             "type": "prompt"
         }
     ],
-    "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏚\" }} @ {{.HostName}}",
+    "console_title_template": "{{.HostName}}",
     "osc99": false,
     "version": 2
 }
