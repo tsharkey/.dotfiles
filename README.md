@@ -43,7 +43,9 @@ sh init.sh
 - figure out all macos settings that I have changed
 - backup script
 - complete zshrc
-- dotfiles.sh 
+- dotfiles.sh
+- add some colorful output
+
 
 # Thoughts:
 - consider getting dropbox, it might make it easier to sync everything from there
