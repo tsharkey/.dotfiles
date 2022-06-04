@@ -7,8 +7,9 @@
 getbranchticketnumber() {
     if ! [[ $(git rev-parse --abbrev-ref HEAD) == *"."* ]]; then
         echo ""
+        return
     fi
-    echo $(git rev-parse --abbrev-ref HEAD | sed 's/\./ /g' | awk '{print $1} ')
+    echo $(git rev-parse --abbrev-ref HEAD | sed 's/\./ /g' | awk '{print $1 }')
 }
 
 ##############################################################################
