@@ -1,6 +1,1 @@
-[init]
-	defaultBranch = main
-[user]
-	name = Tom
-[credential]
-	helper = osxkeychain
+/Users/thomassharkey/.gitconfig

@@ -1,13 +1,11 @@
 #!/bin/bash
 
-echo $(pwd)
-
 # check if symlink already exists, if not create it
 ensuresymlink() {
     if [ -L "$1" ]; then
         echo "Symlink already exists: $1"
     else
-        ln -s "$2" "$1"
+        ln -sf "$2" "$1"
     fi
 }
 
