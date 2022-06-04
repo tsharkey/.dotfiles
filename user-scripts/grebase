@@ -1,5 +1,0 @@
-#!/bin/bash
-
-count=$(git log origin/master.. --pretty=format:'' | wc -l | xargs)
-count=$((count+1)) # have to increment by 1 to get full branch log
-git rebase -i HEAD~"$count"

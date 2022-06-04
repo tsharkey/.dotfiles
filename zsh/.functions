@@ -1,5 +1,9 @@
+##############################################################################
+#
+#  Git
+#
+##############################################################################
 
-# git
 # push upstream to current branch name, if on master ask if that's ok
 gitp() {
     # requires git zsh plugin
@@ -30,6 +34,20 @@ gitp() {
   git push origin "$(git rev-parse --abbrev-ref HEAD)"
 }
 
+##############################################################################
+#
+#  Utility
+#
+##############################################################################
+
+# mkdir and cd into it
 mdir() {
     mkdir -p "$@" && cd "$@" || exit
+}
+
+# add a path to the PATH variable only if it is not already there
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
 }

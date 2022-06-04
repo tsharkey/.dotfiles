@@ -4,17 +4,12 @@ set -e
 
 echo "Checking requirements..."
 
-sh ./ensure-macos-version.sh
-
 echo "Installing xcode command line tools..."
 xcode-select --install
 
-sh ./ensure-omz.sh
+ensuremacosversion
+ensurebrew
+ensureomz
 
-sh ./ensure-brew.sh
-
-
-
-
-
-
+# set zsh to default shell
+chsh -s $(which zsh)
