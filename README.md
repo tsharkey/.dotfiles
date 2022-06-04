@@ -3,7 +3,6 @@ A collection of dotfiles and configurations to make my development environment "
 
 ## Requirements
 ***NOTE: If any of these requirements are missing you will be prompted to install them through [requirements.sh](bootstrap-scripts/requirements.sh)***
-- macOS 11.4 or greater (Big Sur)
 - zsh
 - brew
 - oh-my-zsh
@@ -28,13 +27,11 @@ A collection of dotfiles and configurations to make my development environment "
 ## Usage
 Clone this repository
 ```
-git clone git@github.com/tsharkey/.dotfiles.git
+git clone git@github.com/tsharkey/.dotfiles.git && cd .dotfiles
 ```
 
-Run [init.sh](init.sh)
+Run [bootstrap.sh](bootstrap.sh)
 ```
-cd <path do this project directory>
-
 sh bootstrap.sh
 ```
 
@@ -48,12 +45,12 @@ There is a scripts repo [here](github.com/tsharkey/scripts) that you can setup b
   - iterm theme installation? or will this just get synced?
 - figure out all macos settings that I have changed
 - backup script
-- complete zshrc
 - setup automatic push
   - https://darencard.net/blog/2017-05-02-auto-git-file/
-- fix ensuremacosversion
 - add color
-
+- fix gitp to support fix, patch, feat and ticket num
+- echo and input on same line
+- allow user to have different config
 
 
 
