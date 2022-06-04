@@ -50,3 +50,4 @@ There is a scripts repo [here](github.com/tsharkey/scripts) that you can setup b
   - https://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
 - allow user to have different config
 - lint and format, maybe add that to the repo?
+- fix link script
