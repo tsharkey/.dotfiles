@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo $(pwd)
+
 # check if symlink already exists, if not create it
 ensuresymlink() {
     if [ -L "$1" ]; then
@@ -10,11 +12,11 @@ ensuresymlink() {
 }
 
 # link zsh files
-ensuresymlink ../zsh/.zshrc ~/.zshrc
-ensuresymlink ../zsh/.zprofile ~/.zprofile
+ensuresymlink ./zsh/.zshrc ~/.zshrc
+ensuresymlink ./zsh/.zprofile ~/.zprofile
 
 # link git files
-ensuresymlink ../git/.gitconfig ~/.gitconfig
-ensuresymlink ../git/.gitignore ~/.gitignore
+ensuresymlink ./git/.gitconfig ~/.gitconfig
+ensuresymlink ./git/.gitignore ~/.gitignore
 
 printf "\e[32m✓ finished setting up symlinks\e[0m\n"
