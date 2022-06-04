@@ -11,3 +11,5 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # set darkmode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
+printf "\e[32m✓ finished setting up macos defaults\e[0m\n"

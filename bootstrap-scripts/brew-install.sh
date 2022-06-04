@@ -2,14 +2,14 @@
 
 set -e
 
-echo "Installing fonts -> formulas -> casks..."
-
-echo "Installing fonts..."
 # install nerd font, a nerd font is required for oh-my-posh to work
+echo "installing fonts..."
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 
-echo "Installing formulas..."
+printf "\e[32m✓ fonts installed\e[0m\n"
+
+echo "installing formulas..."
 # install all my tools
 brew install mas \ # Mac App Store
              jandedobbeleer/oh-my-posh/oh-my-posh \ # zsh themes
@@ -34,7 +34,9 @@ brew install mas \ # Mac App Store
              zsh-completions \
              autojump # fast directory switching
 
-echo "Installing casks..."
+printf "\e[32m✓ formulas installed\e[0m\n"
+
+echo "installing casks..."
 
 # Install apps separately because if they are already installed
 # they will stop the install chain
@@ -53,5 +55,8 @@ brew install --cask fantastical
 brew install --cask zoomus
 brew install --cask appcleaner
 
+printf "\e[32m✓ casks installed\e[0m\n"
 echo "cleaning up"
 brew cleanup
+
+printf "\e[32m✓ brew setup completed\e[0m\n"

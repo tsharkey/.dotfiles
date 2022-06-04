@@ -43,14 +43,11 @@ There is a scripts repo [here](github.com/tsharkey/scripts) that you can setup b
 - alfred syncing
 - iterm syncing
   - iterm theme installation? or will this just get synced?
-- figure out all macos settings that I have changed
 - backup script
 - setup automatic push
   - https://darencard.net/blog/2017-05-02-auto-git-file/
 - add color
-- fix gitp to support fix, patch, feat and ticket num
-- echo and input on same line
+- fix gitp to support save, fix, patch, feat and ticket num
+  - https://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
 - allow user to have different config
-
-
-
+- lint and format, maybe add that to the repo?

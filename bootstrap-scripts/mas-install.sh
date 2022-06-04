@@ -8,3 +8,5 @@ mas install 1091189122
 
 # Unsplash wallpapers
 mas install 1295203466
+
+printf "\e[32m✓ finished installing app store apps\e[0m\n"

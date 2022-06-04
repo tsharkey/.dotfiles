@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo "Are you sure you want to start the bootstrap process? (y/n)"
-read -r response
+read -p $'\e[32mAre you sure you want to start the bootstrap process?\e[0m (y/n): ' response
 if ! [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo "Exiting..."
     exit 1
@@ -19,8 +18,7 @@ sh ./link.sh
 source ~/.zshrc
 
 # check if the user wants to add the scripts
-echo "Do you want to add the scripts to your PATH? (y/n)"
-read -r response
+read -p $'\e[32mDo you want to add the scripts to your PATH?\e[0m (y/n): ' response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sh ./scripts.sh
 fi
@@ -28,4 +26,4 @@ fi
 # set zsh to default shell
 chsh -s $(which zsh)
 
-echo "Setup complete! You might need to reload your terminal or restart your computer for all changes to take effect."
+printf "\U1F680 \e[32mSetup complete! You might need to reload your terminal or restart your computer for all changes to take effect.\n\e[0m!\n"

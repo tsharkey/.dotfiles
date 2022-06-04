@@ -8,3 +8,5 @@ fi
 
 # clone scripts repository
 git clone git@github.com/tsharkey/scripts.git $DEV_DIRECTORY/scripts
+
+printf "\e[32m✓ finished adding scripts to user path\e[0m\n"

@@ -16,3 +16,5 @@ ensuresymlink ../zsh/.zprofile ~/.zprofile
 # link git files
 ensuresymlink ../git/.gitconfig ~/.gitconfig
 ensuresymlink ../git/.gitignore ~/.gitignore
+
+printf "\e[32m✓ finished setting up symlinks\e[0m\n"

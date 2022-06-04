@@ -10,64 +10,38 @@ set -e
 
 # ensure oh-my-zsh is installed
 ensureomz() {
-    echo "Checking for oh-my-zsh..."
+    echo "checking for oh-my-zsh..."
 
-    # check if oh my zsh is installed
     if ! [ -d ~/.oh-my-zsh ]; then
-    echo "oh my zsh not installed... would you like to install it now? (y/n)"
-    read -r response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        echo "installing oh my zsh..."
+        printf "\e[31m✗ oh-my-zsh not installed... installing now\e[0m\n"
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    else
-        echo "oh my zsh not installed"
-        return 1
     fi
-    else
-        echo "oh my zsh already installed... updating"
-        if ! pushd ~/.oh-my-zsh &> /dev/null && git pull && popd &> /dev/null; then
-            echo "oh my zsh update failed"
-            return 1
-        fi
-    fi
+
+    # print green checkmark
+    printf "\e[32m✓ oh-my-zsh installed\e[0m\n"
 }
 
 # ensure brew is intalled
 ensurebrew() {
-    echo "Checking if brew is installed..."
+    echo "checking if brew is installed..."
 
     if ! [ -x "$(command -v brew)" ]; then
-    echo "brew not installed... would you like to install it now? (y/n)"
-    read -r response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        echo "installing brew..."
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    else
-        echo "brew not installed"
-        return 1
+        printf "\e[31m✗ brew not installed... installing now\e[0m\n"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
-    else
-        echo "brew already installed... updating"
-        brew update
-    fi
+
+    printf "\e[32m✓ brew installed\e[0m\n"
 }
 
 ensurexcodetools() {
-    echo "Checking if xcode tools are installed..."
+    echo "checking if xcode tools are installed..."
 
     if ! [ -x "$(command -v xcode-select)" ]; then
-    echo "xcode tools not installed... would you like to install it now? (y/n)"
-    read -r response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        echo "installing xcode tools..."
+                printf "\e[31m✗ xcode-tools not installed... installing now\e[0m\n"
         xcode-select --install
-    else
-        echo "xcode tools not installed"
-        return 1
     fi
-    else
-        echo "xcode tools already installed"
-    fi
+
+    printf "\e[32m✓ xcode tools installed\e[0m\n"
 }
 
 ###############################################################################
@@ -75,8 +49,10 @@ ensurexcodetools() {
 
 
 # begin script
-echo "Checking requirements..."
+echo "checking requirements..."
 
 ensurexcodetools
 ensurebrew
 ensureomz
+
+printf "\e[32m✓ finished setting up dependencies\e[0m\n"
