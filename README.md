@@ -46,7 +46,6 @@ There is a scripts repo [here](github.com/tsharkey/scripts) that you can setup b
 - backup script
 - setup automatic push
   - https://darencard.net/blog/2017-05-02-auto-git-file/
-- add color
 - fix gitp to support save, fix, patch, feat and ticket num
   - https://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
 - allow user to have different config
