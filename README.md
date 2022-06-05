@@ -61,6 +61,7 @@ There is a scripts repo [here](github.com/tsharkey/scripts) that you can setup b
 - lint and format, maybe add that to the repo?
   - shellcheck files
   - all of my lint configs would be useful
+- Figure out how to store things and fetch them from scripts. Like a github access token
 
 ## Config setup
 - dev directory
