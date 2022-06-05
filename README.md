@@ -55,6 +55,7 @@ There is a scripts repo [here](github.com/tsharkey/scripts) that you can setup b
 - iterm syncing
   - iterm theme installation? or will this just get synced?
 - backup script
+  - alfred and iterm settings
 - setup automatic push
   - https://darencard.net/blog/2017-05-02-auto-git-file/
 - allow user to have different config
