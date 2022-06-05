@@ -1,1 +1,7 @@
-/Users/thomassharkey/.gitconfig
+[init]
+	defaultBranch = main
+[user]
+	name = Tom Sharkey
+	email = sharkey.thomasm@gmail.com
+[credential]
+	helper = osxkeychain
