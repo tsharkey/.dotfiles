@@ -32,7 +32,8 @@ brew install mas \ # Mac App Store
              gh \ # github cli
              tree \ # directory tree view
              zsh-completions \
-             autojump # fast directory switching
+             autojump \ # fast directory switching
+             python3 # python3
 
 printf "\e[32m✓ formulas installed\e[0m\n"
 

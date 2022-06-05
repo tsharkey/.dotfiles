@@ -9,7 +9,6 @@ ensuresymlink() {
     fi
 }
 
-# check if DEV_DIRECTOY is set
 if [ -z "$DEV_DIRECTORY" ]; then
     echo "DEV_DIRECTORY is not set"
     exit 1

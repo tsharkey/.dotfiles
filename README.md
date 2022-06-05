@@ -7,6 +7,8 @@ A collection of dotfiles and configurations to make my development environment "
 - brew
 - oh-my-zsh
 
+***Note: The scripts assume that you will use the already set $DEV_DIRECTORY in [.exports](zsh/.exports) if you would like change it then please do so beforehand***
+
 ## What's going to happen?
 - A handful of casks and formulas through brew
   - see [brew.sh](bootstrap-scripts/brew.sh) for the list of formulas and casks
@@ -22,6 +24,15 @@ A collection of dotfiles and configurations to make my development environment "
   - functions
   - theme
   - plugins 
+
+### Planning Ahead
+This process will wipe out any existing settings for iterm2 and Alfred. If you would like to save them as part of the backup process see these guide for how to do that
+
+#### Alfred
+You can save your Alfred settings by following this [guide](https://www.alfredapp.com/help/advanced/sync/)
+
+#### Iterm2
+You can choose where to save your iterm2 settings [here](https://gitlab.com/gnachman/iterm2/-/wikis/back-up-preferences)
 
 
 ## Usage
@@ -46,8 +57,10 @@ There is a scripts repo [here](github.com/tsharkey/scripts) that you can setup b
 - backup script
 - setup automatic push
   - https://darencard.net/blog/2017-05-02-auto-git-file/
-- fix gitp to support save, fix, patch, feat and ticket num
-  - https://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
 - allow user to have different config
 - lint and format, maybe add that to the repo?
-- fix link script
+  - shellcheck files
+  - all of my lint configs would be useful
+
+## Config setup
+- dev directory

@@ -5,8 +5,11 @@ pathadd "$HOME/.oh-my-zsh"
 pathadd "$HOME/go"
 pathadd "$GOPATH/bin"
 
-# Directories
-export DEV_DIRECTORY=$HOME/dev
+# # Directories
+# export DEV_DIRECTORY=$HOME/dev
+
+# PYTHON ENV VARIABLES
+export PATH=$PATH:$HOME/Library/Python/3.8/bin
 
 # scripts
 if [ -d "$DEV_DIRECTORY/scripts" ]; then
