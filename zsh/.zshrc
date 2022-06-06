@@ -8,6 +8,11 @@ eval "$(oh-my-posh init zsh --config ~/dev/.dotfiles/themes/oh-my-posh/posh-them
 # auto updates for zsh
 zstyle ':omz:update' mode auto      # update automatically without asking
 
+# login to lastpass to set up secrets
+if ! lpass status; then
+    lpass login sharkey.thomasm@gmail.com
+fi
+
 source ~/dev/.dotfiles/zsh/.exports
 source ~/dev/.dotfiles/zsh/.alias
 source ~/dev/.dotfiles/zsh/.functions
