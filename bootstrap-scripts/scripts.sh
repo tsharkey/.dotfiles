@@ -7,7 +7,7 @@ if [ -z "$DEV_DIRECTORY" ]; then
 fi
 
 # clone scripts repository
-git clone git@github.com/tsharkey/scripts.git $DEV_DIRECTORY/scripts
+git clone git@github.com:tsharkey/scripts.git $DEV_DIRECTORY/scripts
 
 pushd $DEV_DIRECTORY/scripts
 
