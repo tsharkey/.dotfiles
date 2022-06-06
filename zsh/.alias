@@ -12,6 +12,7 @@ alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
 alias df="code ~/dev/.dotfiles"
 alias fw="code ~/dev/sportsdeck/web-app"
 alias fa="code ~/dev/sportsdeck/api"
+alias dev="cd $DEV_DIRECTORY"
 
 # misc
 alias fixdbeaver='codesign --force --deep --sign - /Applications/DBeaverEE.app'
