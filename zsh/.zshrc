@@ -14,7 +14,7 @@ if [ -z "$JIRA_API_KEY" ] || [ -z "$GH_ACCESS_TOKEN" ]; then
         lpass login --trust sharkey.thomasm@gmail.com
     fi
 
-    source ~/.secrets
+    source ~/dev/.dotfiles/zsh/.secrets
 fi
 
 source ~/dev/.dotfiles/zsh/.exports
