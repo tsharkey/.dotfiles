@@ -55,6 +55,7 @@ brew install --cask tiles
 brew install --cask fantastical
 brew install --cask zoomus
 brew install --cask appcleaner
+brew install --cask setapp
 
 printf "\e[32m✓ casks installed\e[0m\n"
 echo "cleaning up"

@@ -9,8 +9,12 @@ eval "$(oh-my-posh init zsh --config ~/dev/.dotfiles/themes/oh-my-posh/posh-them
 zstyle ':omz:update' mode auto      # update automatically without asking
 
 # login to lastpass to set up secrets
-if ! lpass status -q; then
-    lpass login sharkey.thomasm@gmail.com
+if [ -z "$JIRA_API_KEY" ] || [ -z "$GH_ACCESS_TOKEN" ]; then
+    if ! lpass status -q;  then
+        lpass login --trust sharkey.thomasm@gmail.com
+    fi
+
+    source ~/.secrets
 fi
 
 source ~/dev/.dotfiles/zsh/.exports
