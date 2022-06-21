@@ -33,7 +33,8 @@ brew install mas \ # Mac App Store
              tree \ # directory tree view
              zsh-completions \
              autojump \ # fast directory switching
-             python3 # python3
+             python3 \ # python3
+             circleci # circleci
 
 printf "\e[32m✓ formulas installed\e[0m\n"
 
@@ -56,6 +57,7 @@ brew install --cask fantastical
 brew install --cask zoomus
 brew install --cask appcleaner
 brew install --cask setapp
+brew install --cask alt-tab
 
 printf "\e[32m✓ casks installed\e[0m\n"
 echo "cleaning up"
