@@ -1,2 +1,2 @@
 pathadd "$HOME/dev/promoboxx/pbxx-scripts"
-GOSUMDB=off
+export GOSUMDB=off
