@@ -12,8 +12,6 @@ A collection of dotfiles and configurations to make my development environment "
 ## What's going to happen?
 - A handful of casks and formulas through brew
   - see [brew.sh](bootstrap-scripts/brew.sh) for the list of formulas and casks
-- brew installs mas, a utility to install Mac App Store apps from the command line
-  - see [mas-install.sh](bootstrap-scripts/mas-install.sh) for the list of apps installed
 - Some mac os settings will be changed
   - see [macos-defaults.sh](bootstrap-scripts/macos-defaults.sh) for the list of settings that will modified
 - All of the dotfiles will be symlinked to their appropriate locations
@@ -28,12 +26,8 @@ A collection of dotfiles and configurations to make my development environment "
 ### Planning Ahead
 This process will wipe out any existing settings for iterm2 and Alfred. If you would like to save them as part of the backup process see these guide for how to do that
 
-#### Alfred
-You can save your Alfred settings by following this [guide](https://www.alfredapp.com/help/advanced/sync/)
-
 #### Iterm2
 You can choose where to save your iterm2 settings [here](https://gitlab.com/gnachman/iterm2/-/wikis/back-up-preferences)
-
 
 ## Usage
 Clone this repository
