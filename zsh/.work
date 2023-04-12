@@ -1,2 +1,12 @@
 pathadd "$HOME/dev/promoboxx/pbxx-scripts"
 export GOSUMDB=off
+
+alias jwt-prod='aws-vault exec pbxx-prod -- go run /Users/thomassharkey/dev/promoboxx/go-jwt/src/main/main.go -type system -duration 3600 -keyProvider paramStore -paramStoreEnv production'
+alias jwt-stg='aws-vault exec pbxx-stg -- go run /Users/thomassharkey/dev/promoboxx/go-jwt/src/main/main.go -type system -duration 3600 -keyProvider paramStore -paramStoreEnv staging'
+alias jwt-dev='aws-vault exec pbxx-dev -- go run /Users/thomassharkey/dev/promoboxx/go-jwt/src/main/main.go -type system -duration 3600 -keyProvider paramStore -paramStoreEnv development'
+alias jwt-internal='aws-vault exec pbxx-internal -- go run /Users/thomassharkey/dev/promoboxx/go-jwt/src/main/main.go -type system -duration 3600 -keyProvider paramStore -paramStoreEnv internal'
+
+alias jwt-prod='aws-vault exec pbxx-prod -- go run go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv production'
+alias jwt-stg='aws-vault exec pbxx-stg -- go run go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv staging'
+alias jwt-dev='aws-vault exec pbxx-dev -- go run go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv development'
+alias jwt-internal='aws-vault exec pbxx-internal -- go run go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv internal'

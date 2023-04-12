@@ -2,6 +2,7 @@
 pathadd "$HOME/.oh-my-zsh"
 
 #### GO ENV VARIABLES ####
+export GOPATH=$HOME/go
 pathadd "$HOME/go"
 pathadd "$GOPATH/bin"
 

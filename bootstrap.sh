@@ -11,7 +11,6 @@ pushd bootstrap-scripts &> /dev/null
 sh ./backup.sh
 sh ./requirements.sh
 sh ./brew-install.sh
-sh ./mas-install.sh
 sh ./macos-defaults.sh
 sh ./link.sh
 
