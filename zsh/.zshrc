@@ -12,7 +12,7 @@ source ~/dev/.dotfiles/zsh/.alias
 source ~/dev/.dotfiles/zsh/.functions
 source ~/dev/.dotfiles/zsh/.work
 
-plugins=(git autojump aws docker docker-compose gh history jira lpass thefuck vscode ssh-agent)
+plugins=(git autojump aws docker docker-compose gh history jira thefuck vscode ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
