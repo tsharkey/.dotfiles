@@ -12,6 +12,9 @@ source ~/dev/.dotfiles/zsh/.alias
 source ~/dev/.dotfiles/zsh/.functions
 source ~/dev/.dotfiles/zsh/.work
 
+# you might need to change this to where your secrets are
+source ~/dev/.secrets
+
 plugins=(git autojump aws docker docker-compose gh history jira thefuck vscode ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
