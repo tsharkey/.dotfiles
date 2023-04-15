@@ -1,63 +1,40 @@
 #!/bin/bash
 
-set -e
+# Update Homebrew and any installed formulas
+brew update
 
-# install nerd font, a nerd font is required for oh-my-posh to work
-echo "installing fonts..."
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
+# Define the list of formulas you want to install or update
+casks=("iterm2" "microsoft-edge" "slack" "spotify" "docker" "grammarly-desktop" "visual-studio-code" "postman" "tiles" "zoomus" "appcleaner" "todoist" "obsidian" "raycast")
+formulas=("oh-my-posh" "postgresql" "semgrep" "go" "golangci-lint" "awscli" "terraform" "tfenv" "terraform-landscape" "fig" "jq" "git" "gh" "tree" "zsh-completions" "autojump" "python3" "circleci")
 
-printf "\e[32m✓ fonts installed\e[0m\n"
+# Loop through the list of formulas and install or update them as needed
+for formula in "${formulas[@]}"
+do
+    # Check if the formula is already installed
+    if brew list --versions "$formula" >/dev/null; then
+        # If it's already installed, check if user wants to upgrade it
+        read -p $'\e[32mDo you want to upgrade '$formula'?\e[0m (y/n): ' response
+        if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+            brew upgrade "$formula"
+        fi
+    else
+        # If it's not installed, install it
+        brew install "$formula"
+    fi
+done
 
-echo "installing formulas..."
-# install all my tools
-brew install mas \ # Mac App Store
-             jandedobbeleer/oh-my-posh/oh-my-posh \
-             # db
-             postgresql \
-             # static-analysis
-             semgrep \
-             # go
-             go \
-             golangci-lint \
-             # cli tools
-             awscli \
-             terraform \
-             tfenv \ # terraform env manager
-             terraform-landscape \
-             fig \ 
-             jq \
-             git \
-             gh \
-             tree \ 
-             zsh-completions \
-             autojump \
-             python3 \
-             circleci
-
-printf "\e[32m✓ formulas installed\e[0m\n"
-
-echo "installing casks..."
-
-# Install apps separately because if they are already installed
-# they will stop the install chain
-brew install --cask iterm2
-brew install --cask microsoft-edge
-brew install --cask slack 
-brew install --cask spotify 
-brew install --cask docker 
-brew install --cask grammarly-desktop 
-brew install --cask visual-studio-code
-brew install --cask postman
-brew install --cask tiles
-brew install --cask zoomus
-brew install --cask appcleaner
-brew install --cask todoist
-brew install --cask obsidian
-brew install --cask raycast
-
-printf "\e[32m✓ casks installed\e[0m\n"
-echo "cleaning up"
-brew cleanup
-
-printf "\e[32m✓ brew setup completed\e[0m\n"
+# Loop through the list of casks and install or update them as needed
+for cask in "${casks[@]}"
+do
+    # Check if the cask is already installed or if the app is already installed in /Applications
+    if brew list --cask --versions "$cask" >/dev/null || [ -d "/Applications/$cask.app" ]; then
+        # If it's already installed, check if user wants to upgrade it
+        read -p $'\e[32mDo you want to upgrade '$cask'?\e[0m (y/n): ' response
+        if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+            brew upgrade "$cask"
+        fi
+    else
+        # If it's not installed, install it
+        brew install --cask "$cask"
+    fi
+done
