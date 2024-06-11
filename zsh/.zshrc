@@ -1,35 +1,55 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# use oh-my-posh theme
-eval "$(oh-my-posh init zsh)"
-eval "$(oh-my-posh init zsh --config ~/dev/.dotfiles/themes/oh-my-posh/posh-theme.omp.json)"
-
+###############################################################################
+## ZSH
+###############################################################################
 # auto updates for zsh
-zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto  
 
-source ~/dev/.dotfiles/zsh/.exports
-source ~/dev/.dotfiles/zsh/.alias
-source ~/dev/.dotfiles/zsh/.functions
-source ~/dev/.dotfiles/zsh/.work
-
-# you might need to change this to where your secrets are
-source ~/dev/.secrets
-
-plugins=(git autojump aws docker docker-compose gh history jira thefuck vscode ssh-agent)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(git autojump aws docker docker-compose gh history thefuck vscode ssh-agent zsh-autosuggestions)
 
 eval $(thefuck --alias)
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(oh-my-posh --config $(brew --prefix oh-my-posh)/themes/cobalt2.omp.json init zsh)"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+###############################################################################
+## Aliases
+###############################################################################
+# git
+alias ghb="gh browse"
 
-eval "$(direnv hook zsh)"
+# zsh
+alias rld="source ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
+
+# utility
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
+alias wtf="thefuck"
+
+# vscode projects
+alias df="code ~/dev/.dotfiles"
+alias dev="cd $DEV_DIRECTORY"
+
+# misc
+alias joke="curl -s https://api.jokes.one/jod | jq -r '.contents.jokes[0].joke.text'"
+alias chucknorris="curl -s https://api.chucknorris.io/jokes/random | jq -r '.value'"
+alias dadjoke="curl -s -H \"Accept: application/json\" https://icanhazdadjoke.com/ | jq -r '.joke'"
+
+###############################################################################
+## Exports
+###############################################################################
+# Path to your oh-my-zsh installation.
+
+#### GO ENV VARIABLES ####
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+export DEV_DIRECTORY=$HOME/dev
+
+# scripts
+if [ -d "$DEV_DIRECTORY/scripts" ]; then
+    export PATH=$PATH:$DEV_DIRECTORY/scripts
+fi
+
+source ~/dev/.secrets

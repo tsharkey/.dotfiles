@@ -4,5 +4,6 @@ export GOSUMDB=off
 alias jwt-stg="aws-vault exec pbxx-stg -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv staging | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"
 alias jwt-dev="aws-vault exec pbxx-dev -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv development | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"
 alias jwt-internal="aws-vault exec pbxx-internal -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv internal | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"
+alias jwt-prod="aws-vault exec pbxx-prod -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv production | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"
 
 alias deploy-configs='code ~/dev/promoboxx/deploy-config-dev ~/dev/promoboxx/deploy-config-stg ~/dev/promoboxx/deploy-config-prod'
