@@ -12,6 +12,7 @@ sh ./backup.sh
 sh ./requirements.sh
 sh ./install.sh
 sh ./macos-defaults.sh
+sh ./nvim.sh
 sh ./link.sh
 
 source ~/.zshrc

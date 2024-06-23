@@ -57,7 +57,8 @@ export EDITOR='nvim'
 ###############################################################################
 #### GO ENV VARIABLES ####
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 
 export DEV_DIRECTORY=$HOME/dev
 

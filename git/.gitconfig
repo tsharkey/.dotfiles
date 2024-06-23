@@ -5,5 +5,3 @@
 	email = sharkey.thomasm@gmail.com
 [credential]
 	helper = osxkeychain
-[safe]
-	directory = /home/app/pbxx2
