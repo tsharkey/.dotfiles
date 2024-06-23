@@ -2,9 +2,10 @@
 
 # check if symlink already exists, if not create it
 ensuresymlink() {
-    if [ -L "$2" ]; then
+    if [ -L "$2" ] && [ -e "$1" ]; then
         echo "Symlink already exists: $1"
     else
+	echo "Creating new symlink: $1"
         ln -sf "$1" "$2"
     fi
 }
@@ -14,12 +15,15 @@ if [ -z "$DEV_DIRECTORY" ]; then
     exit 1
 fi
 
-# link zsh files
-ensuresymlink "$DEV_DIRECTORY"/.dotfiles/zsh/.zshrc ~/.zshrc
-ensuresymlink "$DEV_DIRECTORY"/.dotfiles/zsh/.zprofile ~/.zprofile
+# nvim
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/nvim-config ~/.config/nvim
 
-# link git files
-ensuresymlink "$DEV_DIRECTORY"/.dotfiles/git/.gitconfig ~/.gitconfig
-ensuresymlink "$DEV_DIRECTORY"/.dotfiles/git/.gitignore ~/.gitignore
+# zsh
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/.zshrc ~/.zshrc
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/.zprofile ~/.zprofile
+
+# git
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitconfig ~/.gitconfig
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitignore ~/.gitignore
 
 printf "\e[32m✓ finished setting up symlinks\e[0m\n"

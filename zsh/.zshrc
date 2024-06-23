@@ -1,3 +1,6 @@
+# uncomment to profile zsh -- don't forget about the bottom line
+# zmodload zsh/zprof
+
 ###############################################################################
 ## ZSH
 ###############################################################################
@@ -8,7 +11,7 @@ plugins=(git autojump aws docker docker-compose gh history thefuck vscode ssh-ag
 
 eval $(thefuck --alias)
 
-eval "$(oh-my-posh --config $(brew --prefix oh-my-posh)/themes/cobalt2.omp.json init zsh)"
+eval "$(oh-my-posh --config $(brew --prefix oh-my-posh)/themes/night-owl.omp.json init zsh)"
 
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -21,26 +24,37 @@ alias ghb="gh browse"
 
 # zsh
 alias rld="source ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
+alias ohmyzsh="cd ~.oh-my-zsh && nv"
+alias scrt="nv ~/dev/.secrets"
+alias zshrc="nv ~/.zshrc"
 
 # utility
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | xargs echo -n | pbcopy"
 alias wtf="thefuck"
 
-# vscode projects
-alias df="code ~/dev/.dotfiles"
+# dev projects
+alias df="cd ~/dev/tsharkey/.dotfiles && nv"
 alias dev="cd $DEV_DIRECTORY"
+alias me="cd $DEV_DIRECTORY/tsharkey"
+alias pbxx="cd $DEV_DIRECTORY/promoboxx"
 
 # misc
 alias joke="curl -s https://api.jokes.one/jod | jq -r '.contents.jokes[0].joke.text'"
 alias chucknorris="curl -s https://api.chucknorris.io/jokes/random | jq -r '.value'"
 alias dadjoke="curl -s -H \"Accept: application/json\" https://icanhazdadjoke.com/ | jq -r '.joke'"
 
+
+###############################################################################
+## Neovim/Vim
+###############################################################################
+alias vim='nvim'
+alias nv='nvim'
+alias nvini='cd ~/.config/nvim && nvim'
+export EDITOR='nvim'
+
 ###############################################################################
 ## Exports
 ###############################################################################
-# Path to your oh-my-zsh installation.
-
 #### GO ENV VARIABLES ####
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -52,4 +66,10 @@ if [ -d "$DEV_DIRECTORY/scripts" ]; then
     export PATH=$PATH:$DEV_DIRECTORY/scripts
 fi
 
+# nord colors
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+
 source ~/dev/.secrets
+
+# uncomment to profile zsh -- don't forget about the top line
+# zprof
