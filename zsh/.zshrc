@@ -67,9 +67,6 @@ if [ -d "$DEV_DIRECTORY/scripts" ]; then
     export PATH=$PATH:$DEV_DIRECTORY/scripts
 fi
 
-# nord colors
-test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
-
 source ~/dev/.secrets
 
 # uncomment to profile zsh -- don't forget about the top line

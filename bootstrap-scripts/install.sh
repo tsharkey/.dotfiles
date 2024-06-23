@@ -5,7 +5,7 @@ brew update
 
 # Define the list of formulas you want to install or update
 casks=("iterm2" "firefox" "google-chrome" "slack" "spotify" "docker" "visual-studio-code" "postman" "zoomus" "appcleaner" "todoist" "obsidian" "raycast")
-formulas=("oh-my-posh" "postgresql" "semgrep" "go" "golangci-lint" "awscli" "terraform" "tfenv" "terraform-landscape" "jq" "git" "gh" "tree" "autojump" "circleci" "node" "nvm" "direnv" "mkcert")
+formulas=("oh-my-posh" "postgresql" "semgrep" "go" "golangci-lint" "delve" "awscli" "terraform" "tfenv" "terraform-landscape" "jq" "git" "gh" "tree" "autojump" "circleci" "node" "nvm" "direnv" "mkcert")
 
 # Loop through the list of formulas and install or update them as needed
 for formula in "${formulas[@]}"
@@ -20,8 +20,8 @@ do
     else
         # If it's not installed, install it
         brew install "$formula"
-    fi
-done
+        fi
+    done
 
 # Loop through the list of casks and install or update them as needed
 for cask in "${casks[@]}"
@@ -36,5 +36,8 @@ do
     else
         # If it's not installed, install it
         brew install --cask "$cask"
-    fi
-done
+        fi
+    done
+
+# install a nerd font
+oh-my-posh font install FantasqueSansMono
