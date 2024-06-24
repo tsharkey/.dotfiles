@@ -26,4 +26,11 @@ ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/.zprofile ~/.zprofile
 ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitconfig ~/.gitconfig
 ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitignore ~/.gitignore
 
+# iterm profile
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/iterm-default.json ~/iterm-default.json
+
+# linter configs
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/lint/.golangci.yml ~/.golangci.yml
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/lint/.pg_format ~/.pg_format 
+
 printf "\e[32m✓ finished setting up symlinks\e[0m\n"

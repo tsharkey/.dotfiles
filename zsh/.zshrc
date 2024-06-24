@@ -60,6 +60,12 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
+###############################################################################
+## rbenv
+###############################################################################
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 export DEV_DIRECTORY=$HOME/dev
 
 # scripts
