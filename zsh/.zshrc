@@ -73,6 +73,10 @@ if [ -d "$DEV_DIRECTORY/scripts" ]; then
     export PATH=$PATH:$DEV_DIRECTORY/scripts
 fi
 
+if [ -d "$DEV_DIRECTORY/tsharkey/private-scripts" ]; then
+    export PATH=$PATH:$DEV_DIRECTORY/tsharkey/private-scripts
+fi
+
 source ~/dev/.secrets
 
 # uncomment to profile zsh -- don't forget about the top line
