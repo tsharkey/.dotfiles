@@ -1,0 +1,15 @@
+#tabbrowser-tabs {
+    visibility: collapse;
+}
+#titlebar {
+    max-height: 5px;
+}
+#TabsToolbar .titlebar-buttonbox-container {
+    display: none;
+}
+
+/* For Tree Style Tab */
+#sidebar-header{
+  font-size: 1em !important;
+  padding: 5px 2px 5px 13px !important;
+}
