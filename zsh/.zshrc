@@ -11,7 +11,7 @@ plugins=(git autojump aws docker docker-compose gh history thefuck vscode ssh-ag
 
 eval $(thefuck --alias)
 
-eval "$(oh-my-posh --config $(brew --prefix oh-my-posh)/themes/night-owl.omp.json init zsh)"
+eval "$(oh-my-posh --config $(brew --prefix oh-my-posh)/themes/paradox.omp.json init zsh)"
 
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
