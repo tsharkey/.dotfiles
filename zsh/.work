@@ -1,6 +1,3 @@
-pathadd "$HOME/dev/promoboxx/pbxx-scripts"
-export GOSUMDB=off
-
 alias jwt-stg="aws-vault exec pbxx-stg -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv staging | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"
 alias jwt-dev="aws-vault exec pbxx-dev -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv development | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"
 alias jwt-internal="aws-vault exec pbxx-internal -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv internal | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"

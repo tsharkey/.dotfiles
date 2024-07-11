@@ -1,7 +1,7 @@
 [init]
 	defaultBranch = main
 [user]
-	name = Tom Sharkey
+	name = tsharkey
 	email = sharkey.thomasm@gmail.com
 [credential]
 	helper = osxkeychain

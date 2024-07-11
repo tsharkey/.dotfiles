@@ -43,14 +43,13 @@ alias joke="curl -s https://api.jokes.one/jod | jq -r '.contents.jokes[0].joke.t
 alias chucknorris="curl -s https://api.chucknorris.io/jokes/random | jq -r '.value'"
 alias dadjoke="curl -s -H \"Accept: application/json\" https://icanhazdadjoke.com/ | jq -r '.joke'"
 
+source ~/dev/tsharkey/.dotfiles/zsh/.work
 
 ###############################################################################
 ## Neovim/Vim
 ###############################################################################
-alias vim='nvim'
 alias nv='nvim'
 alias nvini='cd ~/.config/nvim && nvim'
-export EDITOR='nvim'
 
 ###############################################################################
 ## Exports
@@ -59,6 +58,7 @@ export EDITOR='nvim'
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+export GOPRIVATE=github.com/promoboxx/*
 
 ###############################################################################
 ## rbenv
