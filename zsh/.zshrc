@@ -67,6 +67,11 @@ export GOPRIVATE=github.com/promoboxx/*
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+###############################################################################
+## nix
+###############################################################################
+alias nxd="nix develop github.com/tsharkey/.dotfiles"
+
 export DEV_DIRECTORY=$HOME/dev
 
 # scripts
