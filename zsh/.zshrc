@@ -70,7 +70,7 @@ eval "$(rbenv init -)"
 ###############################################################################
 ## nix
 ###############################################################################
-alias nxd="nix develop github.com/tsharkey/.dotfiles"
+alias nxd="nix develop github:tsharkey/.dotfiles -c $SHELL"
 
 export DEV_DIRECTORY=$HOME/dev
 
