@@ -7,7 +7,7 @@
 # auto updates for zsh
 zstyle ':omz:update' mode auto  
 
-plugins=(git autojump aws docker docker-compose gh history thefuck vscode ssh-agent zsh-autosuggestions)
+plugins=(git autojump aws docker docker-compose gh history thefuck vscode ssh-agent zsh-autosuggestions direnv)
 
 eval $(thefuck --alias)
 
@@ -50,6 +50,7 @@ source ~/dev/tsharkey/.dotfiles/zsh/.work
 ###############################################################################
 alias nv='nvim'
 alias nvini='cd ~/.config/nvim && nvim'
+export EDITOR='nvim'
 
 ###############################################################################
 ## Exports
@@ -81,3 +82,6 @@ source ~/dev/.secrets
 
 # uncomment to profile zsh -- don't forget about the top line
 # zprof
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+

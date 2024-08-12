@@ -4,3 +4,6 @@ alias jwt-internal="aws-vault exec pbxx-internal -- go-jwt -type system -duratio
 alias jwt-prod="aws-vault exec pbxx-prod -- go-jwt -type system -duration 3600 -keyProvider paramStore -paramStoreEnv production | cut -d':' -f2 | tr -d '[:space:]' | pbcopy"
 
 alias deploy-configs='code ~/dev/promoboxx/deploy-config-dev ~/dev/promoboxx/deploy-config-stg ~/dev/promoboxx/deploy-config-prod'
+
+alias jme="jira issue list -q\"assignee='tom@promoboxx.com' AND statusCategory IN ('To Do', 'In Progress')\""
+alias jnew="jira issue create"
