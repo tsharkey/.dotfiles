@@ -22,6 +22,9 @@ ensurebrew() {
     if ! [ -x "$(command -v brew)" ]; then
         printf "\e[31m✗ brew not installed... installing now\e[0m\n"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo >> /Users/thomassharkey/.zprofile
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/thomassharkey/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"	
     fi
 
     printf "\e[32m✓ brew installed\e[0m\n"

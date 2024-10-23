@@ -16,7 +16,7 @@ if [ -z "$DEV_DIRECTORY" ]; then
 fi
 
 # nvim
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/nvim-config ~/.config/nvim
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/nvim-conf ~/.config/nvim
 
 # zsh
 ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/.zshrc ~/.zshrc

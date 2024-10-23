@@ -1,21 +1,22 @@
 # uncomment to profile zsh -- don't forget about the bottom line
 # zmodload zsh/zprof
 
+export PATH="/opt/homebrew/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
 ###############################################################################
 ## ZSH
 ###############################################################################
 # auto updates for zsh
 zstyle ':omz:update' mode auto  
 
-plugins=(git autojump aws docker docker-compose gh history thefuck vscode ssh-agent zsh-autosuggestions direnv)
-
-eval $(thefuck --alias)
-
-eval "$(oh-my-posh --config $(brew --prefix oh-my-posh)/themes/paradox.omp.json init zsh)"
+plugins=(git autojump aws docker docker-compose gh history vscode ssh-agent direnv)
 
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+eval "$(oh-my-posh --config $(brew --prefix oh-my-posh)/themes/paradox.omp.json init zsh)"
 ###############################################################################
 ## Aliases
 ###############################################################################
@@ -25,7 +26,7 @@ alias ghb="gh browse"
 # zsh
 alias rld="source ~/.zshrc"
 alias ohmyzsh="cd ~.oh-my-zsh && nv"
-alias scrt="nv ~/dev/.secrets"
+# alias scrt="nv ~/dev/.secrets"
 alias zshrc="nv ~/.zshrc"
 
 # utility
@@ -45,31 +46,27 @@ alias dadjoke="curl -s -H \"Accept: application/json\" https://icanhazdadjoke.co
 
 source ~/dev/tsharkey/.dotfiles/zsh/.work
 
-###############################################################################
-## Neovim/Vim
-###############################################################################
+# Neovim/Vim
 alias nv='nvim'
 alias nvini='cd ~/.config/nvim && nvim'
 export EDITOR='nvim'
 
-###############################################################################
-## Exports
-###############################################################################
-#### GO ENV VARIABLES ####
+# Exports
+# GO ENV VARIABLES
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export GOPRIVATE=github.com/promoboxx/*
 
-###############################################################################
-## rbenv
-###############################################################################
+# misc
+export COMPOSE_MENU=0
+export TENV_AUTO_INSTALL=true
+
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-###############################################################################
-## nix
-###############################################################################
+# nix
 alias nxd="nix develop github:tsharkey/.dotfiles -c $SHELL"
 
 export DEV_DIRECTORY=$HOME/dev
@@ -79,11 +76,15 @@ if [ -d "$DEV_DIRECTORY/scripts" ]; then
     export PATH=$PATH:$DEV_DIRECTORY/scripts
 fi
 
+if [ -d "$DEV_DIRECTORY/promoboxx/pbxx-scripts" ]; then
+  export PATH=$PATH:$DEV_DIRECTORY/promoboxx/pbxx-scripts
+fi
+
 if [ -d "$DEV_DIRECTORY/tsharkey/private-scripts" ]; then
     export PATH=$PATH:$DEV_DIRECTORY/tsharkey/private-scripts
 fi
 
-source ~/dev/.secrets
+# source ~/dev/.secrets
 
 # uncomment to profile zsh -- don't forget about the top line
 # zprof

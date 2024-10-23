@@ -39,6 +39,8 @@
             go-task
             git
             flyctl
+            tailwindcss
+            postgresql_15
           ];
         };
       });
