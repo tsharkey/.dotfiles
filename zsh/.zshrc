@@ -68,6 +68,7 @@ eval "$(rbenv init -)"
 
 # nix
 alias nxd="nix develop github:tsharkey/.dotfiles -c $SHELL"
+EXPORT NIXPKGS_ALLOW_UNFREE=1
 
 export DEV_DIRECTORY=$HOME/dev
 
