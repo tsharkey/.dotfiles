@@ -1,9 +1,32 @@
 # uncomment to profile zsh -- don't forget about the bottom line
 # zmodload zsh/zprof
 
+# homebrew
 export PATH="/opt/homebrew/bin:$PATH"
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+export NODE_VERSION_PREFIX="v"
+export NODE_VERSIONS="$HOME/.nvm/versions/node"
+# This loads nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+# This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+export NODE_VERSIONS="$HOME/.nvm/versions/node"
+export NODE_VERSION_PREFIX="v"
 
 ###############################################################################
 ## ZSH
@@ -61,6 +84,7 @@ export GOPRIVATE=github.com/promoboxx/*
 # misc
 export COMPOSE_MENU=0
 export TENV_AUTO_INSTALL=true
+export TENV_ARCH=amd64
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -68,7 +92,9 @@ eval "$(rbenv init -)"
 
 # nix
 alias nxd="nix develop github:tsharkey/.dotfiles -c $SHELL"
-EXPORT NIXPKGS_ALLOW_UNFREE=1
+alias nxx="nix develop git+ssh://git@github.com/promoboxx/dev-env.git -c $SHELL"
+alias nxxu="nix flake update --flake git+ssh://git@github.com/promoboxx/dev-env.git"
+export NIXPKGS_ALLOW_UNFREE=1
 
 export DEV_DIRECTORY=$HOME/dev
 
