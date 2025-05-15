@@ -28,7 +28,7 @@
         default = pkgs.mkShell {
           # The Nix packages provided in the environment
           packages = with pkgs; [
-            go_1_22 
+            go 
             gotools 
             sqlboiler
             gqlgenc

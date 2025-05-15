@@ -26,8 +26,8 @@ ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/.zprofile ~/.zprofile
 ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitconfig ~/.gitconfig
 ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitignore ~/.gitignore
 
-# iterm profile
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/iterm-default.json ~/iterm-default.json
+# omp theme
+ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/toosharks.omp.json ~/toosharks.omp.json
 
 # linter configs
 ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/lint/.golangci.yml ~/.golangci.yml
