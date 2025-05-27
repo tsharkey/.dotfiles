@@ -85,6 +85,8 @@ export NIXPKGS_ALLOW_UNFREE=1
 
 export DEV_DIRECTORY=$HOME/dev
 
+export PATH="/Users/thomassharkey/.local/bin:$PATH"
+
 # scripts
 if [ -d "$DEV_DIRECTORY/scripts" ]; then
     export PATH=$PATH:$DEV_DIRECTORY/scripts
