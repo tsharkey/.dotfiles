@@ -41,22 +41,10 @@ ensurexcodetools() {
     printf "\e[32m✓ xcode tools installed\e[0m\n"
 }
 
-prompt_for_env_var() {
-    local var_name="$1"
-    if [ -z "${!var_name}" ]; then
-        read -p "$var_name is not set. Please enter the value for $var_name: " value
-        export "$var_name"="$value"
-    fi
-}
-
-###############################################################################
-
-# begin script
 echo "checking requirements..."
 
 ensurexcodetools
 ensurebrew
 ensureomz
-prompt_for_env_var "DEV_DIRECTORY"
 
 printf "\e[32m✓ finished setting up dependencies\e[0m\n"

@@ -6,22 +6,28 @@ if ! [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
     exit 1
 fi
 
+# Set and validate DEV_DIRECTORY
+if [[ -z "$DEV_DIRECTORY" || ! -d "$DEV_DIRECTORY" ]]; then
+    echo "DEV_DIRECTORY is not set or is not a valid directory. Setting to ~/dev."
+    export DEV_DIRECTORY="$HOME/dev"
+fi
+
+if ! mkdir -p "$DEV_DIRECTORY"; then
+    echo "Failed to create DEV_DIRECTORY: $DEV_DIRECTORY"
+    exit 1
+fi
+
+echo "Using DEV_DIRECTORY: $DEV_DIRECTORY"
+
 pushd bootstrap-scripts &> /dev/null
 
 sh ./backup.sh
 sh ./requirements.sh
 sh ./install.sh
 sh ./macos-defaults.sh
-sh ./nvim.sh
 sh ./link.sh
 
 source ~/.zshrc
-
-# check if the user wants to add the scripts
-read -p $'\e[32mDo you want to add the scripts to your PATH?\e[0m (y/n): ' response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  sh ./scripts.sh
-fi
 
 # set zsh to default shell
 chsh -s $(which zsh)

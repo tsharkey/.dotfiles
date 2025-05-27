@@ -16,21 +16,24 @@ if [ -z "$DEV_DIRECTORY" ]; then
 fi
 
 # nvim
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/nvim-conf ~/.config/nvim
+ensuresymlink "$DEV_DIRECTORY"/nvim-conf ~/.config/nvim
 
 # zsh
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/.zshrc ~/.zshrc
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/.zprofile ~/.zprofile
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/zsh/.zshrc ~/.zshrc
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/zsh/.zprofile ~/.zprofile
 
 # git
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitconfig ~/.gitconfig
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/git/.gitignore ~/.gitignore
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/git/.gitconfig ~/.gitconfig
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/git/.gitignore ~/.gitignore
 
 # omp theme
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/zsh/toosharks.omp.json ~/toosharks.omp.json
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/zsh/toosharks.omp.json ~/toosharks.omp.json
 
 # linter configs
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/lint/.golangci.yml ~/.golangci.yml
-ensuresymlink "$DEV_DIRECTORY"/tsharkey/.dotfiles/lint/.pg_format ~/.pg_format 
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/lint/.golangci.yml ~/.golangci.yml
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/lint/.pg_format ~/.pg_format 
+
+# /Users/thomassharkey/Library/Application Support/com.mitchellh.ghostty/config
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/configs/ghostty ~/Library/Application Support/com.mitchellh.ghostty/config
 
 printf "\e[32m✓ finished setting up symlinks\e[0m\n"

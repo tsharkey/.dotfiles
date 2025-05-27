@@ -4,7 +4,7 @@
 brew update
 
 # Define the list of formulas you want to install or update
-casks=("firefox" "google-chrome" "slack" "spotify" "docker" "postman" "zoomus" "appcleaner" "todoist" "obsidian")
+casks=("firefox" "google-chrome" "slack" "spotify" "docker" "postman" "zoom" "appcleaner" "todoist" "obsidian" "ghostty")
 formulas=("neovim" "oh-my-posh" "semgrep" "awscli" "jq" "git" "gh" "tree" "autojump" "circleci" "node" "nvm" "direnv" "mkcert" "pgformatter" "ripgrep")
 
 # Loop through the list of formulas and install or update them as needed
@@ -41,3 +41,7 @@ do
 
 # install a nerd font
 oh-my-posh font install FantasqueSansMono
+
+# clone repos
+git clone git@github.com:tsharkey/nvim-conf.git "$DEV_DIRECTORY/"
+git clone git@github.com:tsharkey/scripts.git "$DEV_DIRECTORY/"
