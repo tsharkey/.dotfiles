@@ -5,7 +5,11 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Only run brew shellenv if on an ARM Mac
+if [ "$(uname -m)" = "arm64" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv )"
+fi
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -106,3 +110,4 @@ fi
 
 # uncomment to profile zsh -- don't forget about the top line
 # zprof
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
