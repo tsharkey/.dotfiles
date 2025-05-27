@@ -5,7 +5,7 @@ ensuresymlink() {
     if [ -L "$2" ] && [ -e "$1" ]; then
         echo "Symlink already exists: $1"
     else
-	echo "Creating new symlink: $1"
+        echo "Creating new symlink: $1"
         ln -sf "$1" "$2"
     fi
 }
@@ -34,6 +34,6 @@ ensuresymlink "$DEV_DIRECTORY"/.dotfiles/lint/.golangci.yml ~/.golangci.yml
 ensuresymlink "$DEV_DIRECTORY"/.dotfiles/lint/.pg_format ~/.pg_format 
 
 # /Users/thomassharkey/Library/Application Support/com.mitchellh.ghostty/config
-ensuresymlink "$DEV_DIRECTORY"/.dotfiles/configs/ghostty ~/Library/Application Support/com.mitchellh.ghostty/config
+ensuresymlink "$DEV_DIRECTORY"/.dotfiles/configs/ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
 printf "\e[32m✓ finished setting up symlinks\e[0m\n"
