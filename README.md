@@ -25,3 +25,6 @@ Run [bootstrap.sh](bootstrap.sh)
 ```
 sh bootstrap.sh
 ```
+
+## TODO
+- [ ] Support auto setup for nix flakes
