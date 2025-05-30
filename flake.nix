@@ -1,9 +1,9 @@
 {
-  description = "Example Go development environment for Zero to Nix";
+  description = "My personal nix development environment";
 
   # Flake inputs
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.633516.tar.gz";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   # Flake outputs
@@ -41,6 +41,15 @@
             flyctl
             tailwindcss
             postgresql_15
+            xmlstarlet
+            terraform-ls
+            eslint
+            eslint_d
+            prettierd
+            templ
+            nodejs_24
+            mise
+            typescript-language-server
           ];
         };
       });
