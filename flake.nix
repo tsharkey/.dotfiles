@@ -29,26 +29,16 @@
           # The Nix packages provided in the environment
           packages = with pkgs; [
             go 
-            gotools 
             sqlboiler
             gqlgenc
-            golangci-lint
             pgformatter
-            aws-vault
             docker
-            go-task
             git
             flyctl
             tailwindcss
             postgresql_15
-            xmlstarlet
-            terraform-ls
-            eslint
-            eslint_d
-            prettierd
             templ
             mise
-            typescript-language-server
           ];
         };
       });
