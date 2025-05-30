@@ -47,7 +47,6 @@
             eslint_d
             prettierd
             templ
-            nodejs_24
             mise
             typescript-language-server
           ];
