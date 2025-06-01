@@ -31,7 +31,6 @@
             go 
             sqlboiler
             gqlgenc
-            pgformatter
             docker
             git
             flyctl
@@ -39,6 +38,18 @@
             postgresql_15
             templ
             mise
+            neovim
+            oh-my-posh
+            semgrep
+            awscli2
+            git
+            jq
+            gh
+            tree
+            autojump
+            circleci-cli
+            mkcert
+            ripgrep
           ];
         };
       });

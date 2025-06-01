@@ -22,9 +22,7 @@ export NODE_VERSIONS="$HOME/.nvm/versions/node"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 # This loads nvm bash_completion
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-
-export NODE_VERSIONS="$HOME/.nvm/versions/node"
-export NODE_VERSION_PREFIX="v"
+source $(brew --prefix nvm)/nvm.sh
 
 ###############################################################################
 ## ZSH
