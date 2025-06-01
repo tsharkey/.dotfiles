@@ -4,8 +4,8 @@
 brew update
 
 # Define the list of formulas you want to install or update
-casks=("firefox" "google-chrome" "slack" "spotify" "docker" "postman" "zoom" "appcleaner" "todoist" "obsidian" "ghostty" "logi-options+", "alt-tab")
-formulas=( "neovim" "oh-my-posh" "git" "gh" )
+casks=("firefox" "google-chrome" "slack" "spotify" "docker" "postman" "zoom" "appcleaner" "todoist" "obsidian" "ghostty" "logi-options+" "alt-tab")
+formulas=("neovim" "oh-my-posh" "semgrep" "awscli" "jq" "git" "gh" "tree" "autojump" "circleci" "node" "nvm" "direnv" "mkcert" "pgformatter" "ripgrep" "rbenv" "go" "mise" "flyctl")
 
 # Loop through the list of formulas and install or update them as needed
 for formula in "${formulas[@]}"

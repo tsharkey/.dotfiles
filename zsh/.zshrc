@@ -106,6 +106,9 @@ if [ -f ~/dev/.secrets ]; then
   source ~/dev/.secrets
 fi
 
+# mise
+eval "$(mise activate zsh)"
+
 # uncomment to profile zsh -- don't forget about the top line
 # zprof
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
