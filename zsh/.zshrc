@@ -106,3 +106,9 @@ fi
 
 # uncomment to profile zsh -- don't forget about the top line
 # zprof
+
+. "$HOME/.langflow/uv/env"
+
+# Added by flyctl installer
+export FLYCTL_INSTALL="/Users/thomassharkey/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
